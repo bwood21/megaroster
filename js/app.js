@@ -31,15 +31,15 @@ const megaroster = {
     btn.closest('.student').style.color = 'pink'
   },
 
-  // moveup(ev){
-  //   const btn = ev.target
-  //   students.move(btn.closest('student').textContent,1)
-  // },
+  moveup(ev){
+    const btn = ev.target
+    students.move(btn.closest('student').textContent,1)
+  },
 
-  // movedown(ev){
-  //   const btn = ev.target
-  //   students.move(btn.closest('student'.textContent),-1)
-  // },
+  movedown(ev){
+    const btn = ev.target
+    students.move(btn.closest('student'.textContent))
+  },
 
   addStudent(ev) {
     ev.preventDefault()
@@ -74,12 +74,12 @@ const megaroster = {
     li
       .querySelector('button.promote')
       .addEventListener('click',this.hypeStudent.bind(this))
-    // li
-    //   .querySelector('button.up')
-    //   .addEventListener('click',this.moveup.bind(this))
-    // li
-    //   .querySelector('button.down')
-    //   .addEventListener('click',this.movedown.bind(this))
+    li
+      .querySelector('button.up')
+      .addEventListener('click',this.moveup.bind(this))
+    li
+      .querySelector('button.down')
+      .addEventListener('click',this.movedown.bind(this))
 
     return li
   },
@@ -89,14 +89,14 @@ const megaroster = {
   }
 }
 megaroster.init('#studentList')
-// Array.prototype.move = (element, offset) =>{
-//   index = this.indexOf(element)
-//   newIndex = index + offset
+Array.prototype.move = (element, offset) =>{
+  index = this.indexOf(element)
+  newIndex = index + offset
   
-//   if (newIndex > -1 && newIndex < this.length){
+  if (newIndex > -1 && newIndex < this.length){
    
-//     removedElement = this.splice(index, 1)[0]
+    removedElement = this.splice(index, 1)[0]
   
 
-//     this.splice(newIndex, 0, removedElement)}
-//   }
+    this.splice(newIndex, 0, removedElement)}
+  }
