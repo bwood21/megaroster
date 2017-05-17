@@ -17,11 +17,10 @@ const megaroster = {
 
   removeStudent(ev) {
     const btn = ev.target
-    // for(let i=0;i<students.length;i++){
-    //  if(students[i].name==btn.parentNode.textContent){
-    //    this.students.splice(i,1)
-    //  }
-    // }
+    for(let i=0;i<this.students.length;i++){
+     if(this.students[i].name==btn.parentNode.textContent){
+       this.students.splice(i,1)
+    }}
     btn.closest('.student').remove()
     
     // Remove it from the this.students array
@@ -31,6 +30,16 @@ const megaroster = {
     const btn = ev.target
     btn.closest('.student').style.color = 'pink'
   },
+
+  // moveup(ev){
+  //   const btn = ev.target
+  //   students.move(btn.closest('student').textContent,1)
+  // },
+
+  // movedown(ev){
+  //   const btn = ev.target
+  //   students.move(btn.closest('student'.textContent),-1)
+  // },
 
   addStudent(ev) {
     ev.preventDefault()
@@ -65,6 +74,13 @@ const megaroster = {
     li
       .querySelector('button.promote')
       .addEventListener('click',this.hypeStudent.bind(this))
+    // li
+    //   .querySelector('button.up')
+    //   .addEventListener('click',this.moveup.bind(this))
+    // li
+    //   .querySelector('button.down')
+    //   .addEventListener('click',this.movedown.bind(this))
+
     return li
   },
 
@@ -73,3 +89,14 @@ const megaroster = {
   }
 }
 megaroster.init('#studentList')
+// Array.prototype.move = (element, offset) =>{
+//   index = this.indexOf(element)
+//   newIndex = index + offset
+  
+//   if (newIndex > -1 && newIndex < this.length){
+   
+//     removedElement = this.splice(index, 1)[0]
+  
+
+//     this.splice(newIndex, 0, removedElement)}
+//   }
