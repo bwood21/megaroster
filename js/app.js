@@ -17,14 +17,19 @@ const megaroster = {
 
   removeStudent(ev) {
     const btn = ev.target
+    // for(let i=0;i<students.length;i++){
+    //  if(students[i].name==btn.parentNode.textContent){
+    //    this.students.splice(i,1)
+    //  }
+    // }
     btn.closest('.student').remove()
-
+    
     // Remove it from the this.students array
     // this.students.splice(?, 1)
   },
   hypeStudent(ev){
     const btn = ev.target
-    btn.closest('.student').style.color = 'red'
+    btn.closest('.student').style.color = 'pink'
   },
 
   addStudent(ev) {
