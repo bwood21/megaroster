@@ -22,6 +22,10 @@ const megaroster = {
     // Remove it from the this.students array
     // this.students.splice(?, 1)
   },
+  hypeStudent(ev){
+    const btn = ev.target
+    btn.closest('.student').style.color = 'red'
+  },
 
   addStudent(ev) {
     ev.preventDefault()
@@ -53,6 +57,9 @@ const megaroster = {
     li
       .querySelector('button.remove')
       .addEventListener('click', this.removeStudent.bind(this))
+    li
+      .querySelector('button.promote')
+      .addEventListener('click',this.hypeStudent.bind(this))
     return li
   },
 
