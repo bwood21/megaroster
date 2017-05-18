@@ -16,9 +16,10 @@ const megaroster = {
   },
 
   removeStudent(ev) {
-    const btn = ev.target
+    const btn = ev.target 
+    const li = btn.closest('student')
     for(let i=0;i<this.students.length;i++){
-     if(this.students[i].name==btn.parentNode.textContent){
+     if(this.students[i].id==li.dataset.id){
        this.students.splice(i,1)
     }}
     btn.closest('.student').remove()
