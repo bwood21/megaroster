@@ -7,39 +7,51 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="C:\Users\Acer\Desktop\XTERN\megaroster\megaroster\font-awesome-4.7.0\font-awesome-4.7.0\css\font-awesome.min.css">
   </head>
   <body>
     <div class="row">
       <div class="medium-offset-2 medium-8 columns">
         <h2>Megaroster</h2>
         <form id="new-student">
-          <div class="small-9 columns">
+          <div class="input-group">
             <input
+              class="input-group-field"
               type="text"
               name="studentName"
               placeholder="Enter student name"
               autofocus
               required
             >
-          </div>
-          <div class="small-3 columns">
-            <button type="submit" class="button expanded">Add Student</button>
+            <div class="input-group-button">
+              <button type="submit" class="success button expanded">Add Student</button>
+            </div>
           </div>
         </form>
       </div>
 
       <div class="row">
         <div class="medium-offset-2 medium-8 columns">
-          <ul id="studentList">
-            <li class="student template">
+          <ul class="no-bullet" id="studentList">
+            <li class="student template clearfix">
               <span class="student-name"></span>
               <span class="actions expanded button-group">
-                <button type="button" class="remove button alert"><i class="fa fa-trash-o"></i></button>
-                <button type="button" class="promote button success"><i class="fa fa-star-o"></i></button>
-                <button type="button" class="up button info"><i class="fa fa-arrow-up"></i></button>
-                <button type="button" class="down button info"><i class="fa fa-arrow-down"></i></button>                
+                <button type="button" class="remove button alert">
+                  <i class="fa fa-trash-o"></i>
+                </button>
+                <button class="promote warning button">
+                  <i class="fa fa-star-o"></i>
+                </button>
+                <button class="move-up button">
+                  <i class="fa fa-arrow-up"></i>
+                </button>
+                <button class="move-down button">
+                  <i class="fa fa-arrow-down"></i>
+                </button>
+                <button class="edit button">
+                  <i class="fa fa-pencil-square"></i>
+                </button>
               </span>
             </li>
           </ul>
